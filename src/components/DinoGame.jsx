@@ -31,7 +31,7 @@ function addScore(name, score) {
   const board = loadLeaderboard();
   board.push({ name: name.trim() || "Anonymous", score });
   board.sort((a, b) => b.score - a.score);
-  const top = board.slice(0, 5);
+  const top = board.slice(0, 3);
   saveLeaderboard(top);
   return top;
 }

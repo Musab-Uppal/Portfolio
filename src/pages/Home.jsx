@@ -201,15 +201,17 @@ const fadeRight = {
 
 // ─── Section Wrapper ─────────────────────────────────────────────────────
 
-function Section({ children, className = "" }) {
+function Section({ id, children, className = "", style }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
   return (
     <motion.section
+      id={id}
       ref={ref}
       initial="hidden"
       animate={inView ? "visible" : "hidden"}
       className={className}
+      style={style}
     >
       {children}
     </motion.section>
