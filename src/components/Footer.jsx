@@ -1,137 +1,78 @@
-import { ArrowUp, FileText, Github, Linkedin, Mail } from "lucide-react";
+import React from "react";
+import { ArrowUp, Github, Linkedin, Mail, FileText } from "lucide-react";
 import ResumeButton from "./ResumeButton";
 
-export default function Footer() {
+const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
-    <footer
-      style={{
-        position: "relative",
-        zIndex: 1,
-        borderTop: "1px solid rgba(255,255,255,0.06)",
-        background: "rgba(3, 7, 18, 0.8)",
-        backdropFilter: "blur(20px)",
-        marginTop: "2rem",
-      }}
-    >
-      <div
-        className="container"
-        style={{
-          padding: "2rem 0",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          gap: "1.5rem",
-        }}
-      >
-        {/* Brand */}
-        <div>
-          <p
-            style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
-              fontSize: "1rem",
-              color: "#f1f5f9",
-              marginBottom: "0.25rem",
-            }}
-          >
-            Musab Ismail
-            <span style={{ color: "#38bdf8" }}>.</span>
-          </p>
-          <p style={{ fontSize: "0.8rem", color: "#475569" }}>
-            © {new Date().getFullYear()} · Built with React & Vite
-          </p>
-        </div>
-
-        {/* Actions */}
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", flexWrap: "wrap" }}>
-          {[
-            { href: "https://github.com/Musab-Uppal", label: "GitHub", Icon: Github },
-            { href: "https://www.linkedin.com/in/musabuppal/", label: "LinkedIn", Icon: Linkedin },
-            { href: "mailto:musabismail02@email.com", label: "Email", Icon: Mail },
-          ].map((s) => (
+    <footer className="border-t border-stone-200 dark:border-[#252219] bg-[#F8F6F2] dark:bg-[#0E0D0B] py-12 transition-colors duration-300">
+      <div className="max-w-6xl mx-auto px-6 lg:px-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Brand & Copyright */}
+          <div className="text-center md:text-left">
             <a
-              key={s.href}
-              href={s.href}
-              target={s.href.startsWith("http") ? "_blank" : undefined}
-              rel="noreferrer"
-              aria-label={s.label}
-              style={{
-                width: "36px",
-                height: "36px",
-                borderRadius: "8px",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#475569",
-                textDecoration: "none",
-                transition: "all 0.25s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.color = "#38bdf8";
-                e.currentTarget.style.borderColor = "rgba(56,189,248,0.3)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.color = "#475569";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
-              }}
+              href="#home"
+              className="font-semibold text-stone-900 dark:text-stone-100 tracking-tight text-[1.0625rem]"
+              style={{ fontFamily: "Inter Tight, sans-serif" }}
             >
-              <s.Icon size={15} />
+              Musab Ismail
             </a>
-          ))}
+            <p className="text-stone-500 dark:text-stone-400 text-xs mt-1">
+              © {new Date().getFullYear()} Musab Ismail. All rights reserved. · Lahore, Pakistan
+            </p>
+          </div>
 
-          <ResumeButton
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.4rem",
-              padding: "0.45rem 1rem",
-              borderRadius: "0.6rem",
-              fontSize: "0.8rem",
-              fontWeight: 600,
-              background: "linear-gradient(135deg, #0ea5e9, #6366f1)",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              textDecoration: "none",
-            }}
-          >
-            <FileText size={13} />
-            Resume
-          </ResumeButton>
+          {/* Actions & Links */}
+          <div className="flex items-center gap-3 flex-wrap justify-center">
+            <a
+              href="https://github.com/Musab-Uppal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-stone-400 dark:text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-[#1A1814] transition-all"
+              aria-label="GitHub"
+            >
+              <Github size={17} strokeWidth={1.75} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/musabuppal/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg text-stone-400 dark:text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-[#1A1814] transition-all"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={17} strokeWidth={1.75} />
+            </a>
+            <a
+              href="mailto:musabismail02@email.com"
+              className="p-2 rounded-lg text-stone-400 dark:text-stone-500 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-[#1A1814] transition-all"
+              aria-label="Email"
+            >
+              <Mail size={17} strokeWidth={1.75} />
+            </a>
 
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            aria-label="Back to top"
-            style={{
-              width: "36px",
-              height: "36px",
-              borderRadius: "8px",
-              background: "rgba(56,189,248,0.08)",
-              border: "1px solid rgba(56,189,248,0.2)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              color: "#38bdf8",
-              cursor: "pointer",
-              transition: "all 0.25s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = "rgba(56,189,248,0.15)";
-              e.currentTarget.style.boxShadow = "0 0 16px rgba(56,189,248,0.2)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = "rgba(56,189,248,0.08)";
-              e.currentTarget.style.boxShadow = "none";
-            }}
-          >
-            <ArrowUp size={14} />
-          </button>
+            <div className="w-px h-4 bg-stone-200 dark:bg-[#252219] mx-1" />
+
+            <ResumeButton className="btn-secondary !py-1.5 !px-3 !text-xs">
+              <FileText size={13} strokeWidth={1.75} />
+              <span>Resume</span>
+            </ResumeButton>
+
+            <button
+              onClick={scrollToTop}
+              className="p-2 rounded-lg text-stone-500 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-[#1A1814] transition-all"
+              aria-label="Back to top"
+              title="Back to top"
+            >
+              <ArrowUp size={16} strokeWidth={1.75} />
+            </button>
+          </div>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
