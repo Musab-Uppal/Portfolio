@@ -77,6 +77,7 @@ const Hero = () => {
           <p className="text-stone-600 dark:text-stone-400 text-lg leading-relaxed mb-10">
             A Software Engineering student at PUCIT building high-performance backend systems,
             clean APIs, and modern web applications — combining C#, ASP.NET Core, and reactive frontend architectures.
+            {" "}Comfortable deploying and shipping projects using AWS, Azure, and Docker.
           </p>
         </div>
 

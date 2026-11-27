@@ -55,23 +55,6 @@ const projects = [
   },
   {
     index: "04",
-    title: "AD Electronics — POS System",
-    subtitle: "Retail & Installment Management",
-    description:
-      "Custom point-of-sale web application built for an electronics retail business. Features secure admin access, customer management, inventory order creation, and an installment tracking system.",
-    tech: ["Next.js", "Supabase", "TypeScript", "Admin Auth", "POS Architecture"],
-    achievements: [
-      "Customer ledger & installment payment scheduling",
-      "Role-protected administrative authentication",
-      "End-to-end sales transactions and balance tracking",
-    ],
-    github: "https://github.com/Musab-Uppal/AD-Electronics",
-    live: null,
-    accentColor: "bg-emerald-50 dark:bg-emerald-950/20",
-    accentBorder: "border-emerald-100 dark:border-emerald-900/30",
-  },
-  {
-    index: "05",
     title: "Junior .NET Interview Prep",
     subtitle: "Open Source Community Resource",
     description:
@@ -88,7 +71,7 @@ const projects = [
     accentBorder: "border-rose-100 dark:border-rose-900/30",
   },
   {
-    index: "06",
+    index: "05",
     title: "Client Frontend Redesign",
     subtitle: "Freelance Angular Project",
     description:
@@ -105,7 +88,7 @@ const projects = [
     accentBorder: "border-indigo-100 dark:border-indigo-900/30",
   },
   {
-    index: "07",
+    index: "06",
     title: "APIGA Frontend Website",
     subtitle: "Production Web Experience",
     description:
@@ -120,6 +103,23 @@ const projects = [
     live: "https://apiga.pk",
     accentColor: "bg-teal-50 dark:bg-teal-950/20",
     accentBorder: "border-teal-100 dark:border-teal-900/30",
+  },
+  {
+    index: "07",
+    title: "Green Clean Group",
+    subtitle: "Next.js & PostgreSQL Platform",
+    description:
+      "Full-stack Next.js and PostgreSQL website for a Liverpool eco-cleaning business, migrated from WordPress. Features 7 service pages with 35 fixed-price packages, an online booking flow, and Dockploy deployment.",
+    tech: ["Next.js", "PostgreSQL", "Prisma", "REST API", "Stripe", "PayPal", "Dockploy"],
+    achievements: [
+      "Migrated WordPress site to Next.js & PostgreSQL as sole developer",
+      "Designed 5-table Prisma schema & 17 REST API routes for orders, services, and payments",
+      "Built 7 service pages with 35 fixed-price packages & booking flow (Stripe, PayPal, cash on arrival)",
+    ],
+    github: null,
+    live: "https://greencleangroup.co.uk",
+    accentColor: "bg-emerald-50 dark:bg-emerald-950/20",
+    accentBorder: "border-emerald-100 dark:border-emerald-900/30",
   },
 ];
 

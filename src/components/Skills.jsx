@@ -40,6 +40,7 @@ const skillCategories = [
     skills: [
       "Git & GitHub",
       "Docker",
+      "AWS",
       "Postman",
       "Vercel",
       "Render",
